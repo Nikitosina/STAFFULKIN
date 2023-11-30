@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 100vh;
+}
+
+.hstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.text-fixed {
+    width: 234px;
+}
+
+.rounded-with-border {
+    border-radius: 16px;
+    height: 34px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.simple-border {
+    border: 1px solid black;
+}
+
+.masthead {
+    flex: 1 100%;
+    background-color: aqua;
+}
+
+.side-left {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+
+.side-right {
+    flex: 0 0 260px;
+    background-color: blanchedalmond;
+}
+
+.middle {
+    flex: 1;
+    background-color: bisque;
+    padding: 0px 20px;
+}
+
+.footer {
+    flex: 1 100%;
+    background-color: blueviolet;
+}
+
+.vertical-padding-m {
+    padding: 0px 28px;
+}
+
+@font-face {
+    font-family: "Default Font";
+    src: url(fonts/IBMPlexMono-Regular.ttf) format("truetype");
+}
+
+p,
+h1,
+h2,
+h3 {
+    font-family: "Default Font", Verdana, Tahoma;
+}
+
+.small-text {
+    font-size: 10px;
+}
