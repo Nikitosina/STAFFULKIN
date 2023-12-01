@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script src="{{url_for('static', filename='functions.js')}}"></script>
+    <script src="{{url_for('static', filename='pasteboard_controller.js')}}"></script>
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <!-- <header class="masthead">
+                <h1>The Header</h1>
+            </header> -->
+            <div class="side-left column">
+                <img src="{{url_for('static', filename='profile_placeholder.png')}}"
+                    style="max-width: 274px; max-height: 274px;">
+            </div>
+            <div class="middle column">
+                <h1>{{ user.name }}</h1>
+                <h3>Аналитик</h3>
+                <div class="hstack" style="background-color: #F3F3F3;">
+                    <p>В сети</p>
+                    <p>На работе</p>
+                </div>
+                <hr>
+                <div class="hstack">
+                    <p class="text-fixed">Корпоративная почта</p>
+                    <div class="rounded-with-border">
+                        <p id="email" class="vertical-padding-m">{{ user.email }}</p>
+                    </div>
+                    <img id="copy1" onclick="myFunction()" width="32" height="32"
+                        src="{{url_for('static', filename='copy.svg')}}" alt="Копировать">
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Номер телефона</p>
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">+79160000000</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="hstack">
+                    <p class="text-fixed">Дата рождения</p>
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">{{ user.birthdate }}</p>
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Размер футболки</p>
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">{{ user.tshirt_size }}</p>
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Образование</p>
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">{{ user.education }}</p>
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Учебное заведение</p>
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">{{ user.university }}</p>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-fixed">Навыки (Софт скиллы)</p>
+                <div class="hstack">
+                    {% for soft_skill in user.soft_skills %}
+                    <div class="rounded-with-border">
+                        <p class="vertical-padding-m">{{ soft_skill }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="side-right column">
+                <div class="simple-border" style="min-height: 212px;">
+                    <div style="padding: 4px 8px;">
+                        <div class="hstack">
+                            <img width="30" height="30" src="{{url_for('static', filename='1c.svg')}}">
+                            <p>1c</p>
+                        </div>
+                        <div class="hstack">
+                            <img width="30" height="30" src="{{url_for('static', filename='wiki.svg')}}">
+                            <p>Wiki</p>
+                        </div>
+                        <div class="hstack">
+                            <img width="30" height="30" src="{{url_for('static', filename='jira.svg')}}">
+                            <p>Jira</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 24px;"></div>
+                <div class="simple-border">
+                    <div style="padding: 10px;">
+                        <p class="small-text">Накопилось</p>
+                        <p>14 дней отпуска</p>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                &copy; Footer
+            </footer>
+        </div>
+    </body>
+</body>
+
+</html>

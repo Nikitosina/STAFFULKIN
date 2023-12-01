@@ -1,0 +1,154 @@
+{
+    "endpoints": {
+        "addUser": {
+            "method": "POST",
+            "url": "/api/users",
+            "sample_request": {
+                "name": "Имя пользователя",
+                "email": "user@example.com",
+                "password": "пароль",
+                "birthdate": "1990-01-01",
+                "tshirt_size": "M",
+                "education": "Высшее образование",
+                "university": "Университет",
+                "soft_skills": [
+                    "Коммуникабельность",
+                    "Организованность",
+                    "Трудолюбие"
+                ],
+                "calendar_events": [
+                    {
+                        "event_id": 1,
+                        "event_title": "Встреча 1",
+                        "event_date": "2023-11-20",
+                        "event_description": "Описание встречи 1"
+                    },
+                    {
+                        "event_id": 2,
+                        "event_title": "Встреча 2",
+                        "event_date": "2023-11-25",
+                        "event_description": "Описание встречи 2"
+                    }
+                ]
+            },
+            "sample_response": {
+                "user_id": 1,
+                "message": "Пользователь успешно добавлен."
+            }
+        },
+        "getUserById": {
+            "method": "GET",
+            "url": "/api/users/{id}",
+            "sample_response": {
+                "user_id": 1,
+                "name": "Имя пользователя",
+                "email": "user@example.com",
+                "birthdate": "1990-01-01",
+                "tshirt_size": "M",
+                "education": "Высшее образование",
+                "university": "Университет",
+                "soft_skills": [
+                    "Коммуникабельность",
+                    "Организованность",
+                    "Трудолюбие"
+                ],
+                "calendar_events": [
+                    {
+                        "event_id": 1,
+                        "event_title": "Встреча 1",
+                        "event_date": "2023-11-20",
+                        "event_description": "Описание встречи 1"
+                    },
+                    {
+                        "event_id": 2,
+                        "event_title": "Встреча 2",
+                        "event_date": "2023-11-25",
+                        "event_description": "Описание встречи 2"
+                    }
+                ]
+            }
+        },
+        "editUser": {
+            "method": "PUT",
+            "url": "/api/users/{id}/admin",
+            "sample_request": {
+                "name": "Новое имя",
+                "email": "new.email@example.com",
+                "position": "Новая должность",
+                "status": "в офисе",
+                "corporate_email": "новый_email@example.com",
+                "phone_number": "+9876543210",
+                "supervisor": "Новый Руководитель",
+                "team": "Новая Команда",
+                "birthdate": "1995-02-15"
+            },
+            "sample_response": {
+                "message": "Информация о пользователе успешно обновлена."
+            }
+        },
+        "getCompanyTree": {
+            "method": "GET",
+            "url": "/api/company/tree",
+            "sample_response": {
+                "company_tree": {}
+            }
+        },
+        "getAuthToken": {
+            "method": "POST",
+            "url": "/api/auth/token",
+            "sample_request": {
+                "username": "user@example.com",
+                "password": "пароль"
+            },
+            "sample_response": {
+                "access_token": "your_access_token",
+                "token_type": "bearer",
+                "expires_in": 3600
+            }
+        },
+        "addGoal": {
+            "method": "POST",
+            "url": "/api/goals",
+            "sample_request": {
+                "employee_id": "{id пользователя}",
+                "description": "Описание цели",
+                "deadline": "2023-12-31"
+            },
+            "sample_response": {
+                "goal_id": 1,
+                "message": "Цель успешно добавлена."
+            }
+        },
+        "editEmployeeSelf": {
+            "method": "PATCH",
+            "url": "/api/employees/{employee_id}/self",
+            "sample_request": {
+                "telegram_contact": "@новый_контакт",
+                "tshirt_size": "L",
+                "soft_skills": [
+                    "Новый скилл"
+                ]
+            },
+            "sample_response": {
+                "message": "Информация о сотруднике успешно обновлена."
+            }
+        },
+        "editEmployeeAdmin": {
+            "method": "PUT",
+            "url": "/api/employees/{employee_id}/admin",
+            "sample_request": {
+                "full_name": "Новое ФИО",
+                "position": "Новая должность",
+                "status": "в офисе",
+                "corporate_email": "новый_email@example.com",
+                "phone_number": "+9876543210",
+                "supervisor": "Новый Руководитель",
+                "team": "Новая Команда",
+                "birthdate": "1995-02-15"
+            },
+            "sample_response": {
+                "message": "Информация о сотруднике успешно обновлена."
+            }
+        }
+    }
+}
