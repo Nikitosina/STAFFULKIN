@@ -5,15 +5,18 @@ from models import User
 
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "TimelessRP"
+app.config["SECRET_KEY"] = "STAFFULKIN"
 
 
 @app.route("/users/<id>")
 def user(id):
-    global sample
     # Make request
     user = User(**User.sample)
     return render_template("index.html", user=user)
+
+@app.route("/addUser")
+def addUser():
+    return render_template("addUser.html")
 
 
 if __name__ == "__main__":
