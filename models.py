@@ -1,23 +1,4 @@
-import json
-
-
 class User:
-    sample = json.loads(
-        """{
-        "user_id": "iivanov",
-        "name": "Иван Иванов",
-        "email": "iivanov@example.com",
-        "birthdate": "1990-01-01",
-        "tshirt_size": "M",
-        "education": "Высшее образование",
-        "university": "Университет",
-        "soft_skills": [
-            "Коммуникабельность",
-            "Организованность"
-        ]
-    }"""
-    )
-
     def __init__(
         self,
         user_id: str,
@@ -37,3 +18,23 @@ class User:
         self.education = education
         self.university = university
         self.soft_skills = soft_skills
+
+    @classmethod
+    def fromForm(cls, form):
+        username = form.get("username")
+        email = form.get("email")
+        birthdate = form.get("birthdate")
+        tshirt_size = form.get("tshirt_size")
+        education = form.get("education")
+        university = form.get("university")
+        position = form.get("position")
+        return cls(
+            user_id="",
+            name=username,
+            email=email,
+            birthdate=birthdate,
+            tshirt_size=tshirt_size,
+            education=education,
+            university=university,
+            soft_skills=[],
+        )

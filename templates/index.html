@@ -3,66 +3,96 @@
 
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
-    <script src="{{url_for('static', filename='functions.js')}}"></script>
-    <script src="{{url_for('static', filename='pasteboard_controller.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/functions.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/pasteboard_controller.js')}}"></script>
 </head>
 
 <body>
 
     <body>
         <div class="container">
-            <!-- <header class="masthead">
-                <h1>The Header</h1>
-            </header> -->
+            <div class="float-top">
+                <div class="hstack">
+                    <div class="popup" onclick="showPopup()">
+                        <img src="{{url_for('static', filename='resources/setting.svg')}}">
+                        <div class="popuptext" id="settingsPopup" style="padding: 4px;">
+                            <p class="text-s rounded-with-border-action vertical-padding-xs">Изменить данные
+                                существующего сотрудника</p>
+                            <p class="text-s rounded-with-border-action vertical-padding-xs">Изменить свои данные</p>
+                            <p class="text-s rounded-with-border-action vertical-padding-xs">Добавить нового сотрудника
+                            </p>
+                            <p class="text-s rounded-with-border-action vertical-padding-xs">Добавить новый отдел</p>
+                        </div>
+                    </div>
+                    <img src="{{url_for('static', filename='resources/bell.svg')}}">
+                    <img src="{{url_for('static', filename='resources/profile_placeholder.png')}}"
+                        style="width: 56px; height: 56px; border-radius: 28px;">
+                </div>
+            </div>
             <div class="side-left column">
-                <img src="{{url_for('static', filename='profile_placeholder.png')}}"
+                <img src="{{url_for('static', filename='resources/profile_placeholder.png')}}"
                     style="max-width: 274px; max-height: 274px;">
             </div>
             <div class="middle column">
                 <h1>{{ user.name }}</h1>
                 <h3>Аналитик</h3>
-                <div class="hstack" style="background-color: #F3F3F3;">
+                <div class="hstack" style="background-color: #F3F3F3; padding: 0px 6px; border-radius: 16px;">
                     <p>В сети</p>
-                    <p>На работе</p>
+                    <div class="hstack rounded-with-border-s">
+                        <div class="hstack horizontal-padding-s vertical-padding-xs" style="gap: 8px;">
+                            <p class="text-s">На работе</p>
+                            <img width="16" height="16" src="{{url_for('static', filename='resources/keyboard.svg')}}">
+                        </div>
+                    </div>
                 </div>
                 <hr>
                 <div class="hstack">
                     <p class="text-fixed">Корпоративная почта</p>
                     <div class="rounded-with-border">
-                        <p id="email" class="vertical-padding-m">{{ user.email }}</p>
+                        <p id="email" class="horizontal-padding-m">{{ user.email }}</p>
                     </div>
-                    <img id="copy1" onclick="myFunction()" width="32" height="32"
-                        src="{{url_for('static', filename='copy.svg')}}" alt="Копировать">
+                    <input type="image" id="copyEmail" width="32" height="32"
+                        src="{{url_for('static', filename='resources/copy.svg')}}" alt="Копировать">
                 </div>
                 <div class="hstack">
                     <p class="text-fixed">Номер телефона</p>
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">+79160000000</p>
+                        <p id="phone" class="horizontal-padding-m">+79160000000</p>
                     </div>
+                    <input type="image" id="copyPhone" width="32" height="32"
+                        src="{{url_for('static', filename='resources/copy.svg')}}" alt="Копировать">
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Мессенджер</p>
+                    <div class="rounded-with-border">
+                        <p id="messenger" class="horizontal-padding-m">iivanov</p>
+                    </div>
+                    <input type="image" id="copyMessenger" width="32" height="32"
+                        src="{{url_for('static', filename='resources/copy.svg')}}" alt="Копировать">
                 </div>
                 <hr>
                 <div class="hstack">
                     <p class="text-fixed">Дата рождения</p>
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">{{ user.birthdate }}</p>
+                        <p class="horizontal-padding-m">{{ user.birthdate }}</p>
                     </div>
                 </div>
                 <div class="hstack">
                     <p class="text-fixed">Размер футболки</p>
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">{{ user.tshirt_size }}</p>
+                        <p class="horizontal-padding-m">{{ user.tshirt_size }}</p>
                     </div>
                 </div>
                 <div class="hstack">
                     <p class="text-fixed">Образование</p>
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">{{ user.education }}</p>
+                        <p class="horizontal-padding-m">{{ user.education }}</p>
                     </div>
                 </div>
                 <div class="hstack">
                     <p class="text-fixed">Учебное заведение</p>
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">{{ user.university }}</p>
+                        <p class="horizontal-padding-m">{{ user.university }}</p>
                     </div>
                 </div>
                 <hr>
@@ -70,24 +100,25 @@
                 <div class="hstack">
                     {% for soft_skill in user.soft_skills %}
                     <div class="rounded-with-border">
-                        <p class="vertical-padding-m">{{ soft_skill }}</p>
+                        <p class="horizontal-padding-m">{{ soft_skill }}</p>
                     </div>
                     {% endfor %}
                 </div>
             </div>
             <div class="side-right column">
+                <div style="height: 112px"></div>
                 <div class="simple-border" style="min-height: 212px;">
                     <div style="padding: 4px 8px;">
                         <div class="hstack">
-                            <img width="30" height="30" src="{{url_for('static', filename='1c.svg')}}">
+                            <img width="30" height="30" src="{{url_for('static', filename='resources/1c.svg')}}">
                             <p>1c</p>
                         </div>
                         <div class="hstack">
-                            <img width="30" height="30" src="{{url_for('static', filename='wiki.svg')}}">
+                            <img width="30" height="30" src="{{url_for('static', filename='resources/wiki.svg')}}">
                             <p>Wiki</p>
                         </div>
                         <div class="hstack">
-                            <img width="30" height="30" src="{{url_for('static', filename='jira.svg')}}">
+                            <img width="30" height="30" src="{{url_for('static', filename='resources/jira.svg')}}">
                             <p>Jira</p>
                         </div>
                     </div>
@@ -95,7 +126,7 @@
                 <div style="height: 24px;"></div>
                 <div class="simple-border">
                     <div style="padding: 10px;">
-                        <p class="small-text">Накопилось</p>
+                        <p class="text-xs">Накопилось</p>
                         <p>14 дней отпуска</p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
-function myFunction() {
+function setTextInPasteboard(elementId) {
     //select the element with ID = "CopyMeID", can be a div, p, or a span, possibly others
-    var textToCopy = document.getElementById("email");
+    var textToCopy = document.getElementById(elementId);
 
     //you can target the same element using querySelector() as well
     //example below:
@@ -34,4 +34,9 @@ function myFunction() {
     if (currentRange) {
         window.getSelection().addRange(currentRange);
     }
+}
+
+function showPopup() {
+    var popup = document.getElementById("settingsPopup");
+    popup.classList.toggle("show");
 }

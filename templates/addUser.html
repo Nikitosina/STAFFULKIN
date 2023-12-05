@@ -3,77 +3,92 @@
 
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
-    <script src="{{url_for('static', filename='functions.js')}}"></script>
-    <script src="{{url_for('static', filename='pasteboard_controller.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/functions.js')}}"></script>
 </head>
 
 <body>
 
     <body>
         <div class="container">
-            <!-- <header class="masthead">
-                <h1>The Header</h1>
-            </header> -->
             <div class="side-left column">
-                <img src="{{url_for('static', filename='profile_placeholder.png')}}"
+                <img src="{{url_for('static', filename='resources/profile_placeholder.png')}}"
                     style="max-width: 274px; max-height: 274px;">
             </div>
             <div class="middle column">
-                <h1><input type="text"></h1>
-                <h3>Аналитик</h3>
-                <div class="hstack" style="background-color: #F3F3F3;">
-                    <p>В сети</p>
-                    <p>На работе</p>
-                </div>
-                <hr>
-                <div class="hstack">
-                    <p class="text-fixed">Корпоративная почта</p>
-                    <div class="rounded-with-border">
-                        <input type="email" name="email" id="email" class="vertical-padding-m transparent-input">
+                <form action="" method="post">
+                    <div class="hstack">
+                        <input type="text" name="username" class="transparent-input" value="Фамилия Имя"
+                            style="font-size: 60px; max-width: 400px;">
+                        <p>*</p>
                     </div>
-                    <p>*</p>
-                </div>
-                <div class="hstack">
-                    <p class="text-fixed">Номер телефона</p>
-                    <div class="rounded-with-border">
-                        <input type="tel" name="phone" id="phone" class="vertical-padding-m transparent-input">
+                    <div class="hstack">
+                        <input type="text" name="position" class="transparent-input" value="Должность"
+                            style="font-size: 30px">
+                        <p>*</p>
                     </div>
-                    <p>*</p>
-                </div>
-                <div class="hstack">
-                    <p class="text-fixed">Мессенджер</p>
-                    <div class="rounded-with-border">
-                        <input type="text" name="messenger" id="messenger" class="vertical-padding-m transparent-input">
+                    <div style="height: 40px;"></div>
+                    <hr>
+                    <div class="hstack">
+                        <p class="text-fixed">Корпоративная почта</p>
+                        <div class="rounded-with-border">
+                            <input type="email" name="email" id="email" class="vertical-padding-m transparent-input">
+                        </div>
+                        <p>*</p>
                     </div>
-                    <p>*</p>
-                </div>
-                <hr>
-                <div class="hstack">
-                    <p class="text-fixed">Дата рождения</p>
-                    <div class="rounded-with-border">
-                        <p class="vertical-padding-m">123</p>
+                    <div class="hstack">
+                        <p class="text-fixed">Номер телефона</p>
+                        <div class="rounded-with-border">
+                            <input type="tel" name="phone" id="phone" class="vertical-padding-m transparent-input">
+                        </div>
+                        <p>*</p>
                     </div>
-                </div>
-                <div class="hstack">
-                    <p class="text-fixed">Размер футболки</p>
-                    <div class="rounded-with-border">
-                        <p class="vertical-padding-m">123</p>
+                    <div class="hstack">
+                        <p class="text-fixed">Мессенджер</p>
+                        <div class="rounded-with-border">
+                            <input type="text" name="messenger" id="messenger"
+                                class="vertical-padding-m transparent-input">
+                        </div>
+                        <p>*</p>
                     </div>
-                </div>
-                <div class="hstack">
-                    <p class="text-fixed">Образование</p>
-                    <div class="rounded-with-border">
-                        <p class="vertical-padding-m">123</p>
+                    <hr>
+                    <div class="hstack">
+                        <p class="text-fixed">Дата рождения</p>
+                        <div class="rounded-with-border">
+                            <input type="date" name="birthdate" id="birthdate"
+                                class="vertical-padding-m transparent-input">
+                        </div>
                     </div>
-                </div>
-                <div class="hstack">
-                    <p class="text-fixed">Учебное заведение</p>
-                    <div class="rounded-with-border">
-                        <p class="vertical-padding-m">123</p>
+                    <div class="hstack">
+                        <p class="text-fixed">Размер футболки</p>
+                        <div class="rounded-with-border">
+                            <input type="text" name="tshirt_size" id="tshirt_size"
+                                class="vertical-padding-m transparent-input">
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <p class="text-fixed">Навыки (Софт скиллы)</p>
+                    <div class="hstack">
+                        <p class="text-fixed">Образование</p>
+                        <div class="rounded-with-border">
+                            <input type="text" name="education" id="education"
+                                class="vertical-padding-m transparent-input">
+                        </div>
+                    </div>
+                    <div class="hstack">
+                        <p class="text-fixed">Учебное заведение</p>
+                        <div class="rounded-with-border">
+                            <input type="text" name="university" id="university"
+                                class="vertical-padding-m transparent-input">
+                        </div>
+                    </div>
+                    <hr>
+                    <footer class="footer">
+                        <div class="hstack">
+                            <div class="spacer"></div>
+                            <p>
+                                <input type="image" src="{{url_for('static', filename='resources/checkmark.svg')}}">
+                            </p>
+                        </div>
+                    </footer>
+                </form>
             </div>
         </div>
     </body>
