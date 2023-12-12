@@ -7,91 +7,85 @@
 </head>
 
 <body>
-
-    <body>
-        <div class="container">
-            <div class="side-left column">
-                <img src="{{url_for('static', filename='resources/profile_placeholder.png')}}"
-                    style="max-width: 274px; max-height: 274px;">
-            </div>
-            <div class="middle column">
-                <form action="" method="post">
-                    <div class="hstack">
-                        <input type="text" name="username" class="transparent-input" value="Фамилия Имя"
-                            style="font-size: 60px; max-width: 400px;">
-                        <p>*</p>
-                    </div>
-                    <div class="hstack">
-                        <input type="text" name="position" class="transparent-input" value="Должность"
-                            style="font-size: 30px">
-                        <p>*</p>
-                    </div>
-                    <div style="height: 40px;"></div>
-                    <hr>
-                    <div class="hstack">
-                        <p class="text-fixed">Корпоративная почта</p>
-                        <div class="rounded-with-border">
-                            <input type="email" name="email" id="email" class="vertical-padding-m transparent-input">
-                        </div>
-                        <p>*</p>
-                    </div>
-                    <div class="hstack">
-                        <p class="text-fixed">Номер телефона</p>
-                        <div class="rounded-with-border">
-                            <input type="tel" name="phone" id="phone" class="vertical-padding-m transparent-input">
-                        </div>
-                        <p>*</p>
-                    </div>
-                    <div class="hstack">
-                        <p class="text-fixed">Мессенджер</p>
-                        <div class="rounded-with-border">
-                            <input type="text" name="messenger" id="messenger"
-                                class="vertical-padding-m transparent-input">
-                        </div>
-                        <p>*</p>
-                    </div>
-                    <hr>
-                    <div class="hstack">
-                        <p class="text-fixed">Дата рождения</p>
-                        <div class="rounded-with-border">
-                            <input type="date" name="birthdate" id="birthdate"
-                                class="vertical-padding-m transparent-input">
-                        </div>
-                    </div>
-                    <div class="hstack">
-                        <p class="text-fixed">Размер футболки</p>
-                        <div class="rounded-with-border">
-                            <input type="text" name="tshirt_size" id="tshirt_size"
-                                class="vertical-padding-m transparent-input">
-                        </div>
-                    </div>
-                    <div class="hstack">
-                        <p class="text-fixed">Образование</p>
-                        <div class="rounded-with-border">
-                            <input type="text" name="education" id="education"
-                                class="vertical-padding-m transparent-input">
-                        </div>
-                    </div>
-                    <div class="hstack">
-                        <p class="text-fixed">Учебное заведение</p>
-                        <div class="rounded-with-border">
-                            <input type="text" name="university" id="university"
-                                class="vertical-padding-m transparent-input">
-                        </div>
-                    </div>
-                    <hr>
-                    <footer class="footer">
-                        <div class="hstack">
-                            <div class="spacer"></div>
-                            <p>
-                                <input type="image" src="{{url_for('static', filename='resources/checkmark.svg')}}">
-                            </p>
-                        </div>
-                    </footer>
-                </form>
-            </div>
+    <div class="container">
+        <div class="side-left column">
+            <img src="{{url_for('static', filename='resources/profile_placeholder.png')}}"
+                style="max-width: 274px; max-height: 274px;">
         </div>
-    </body>
+        <div class="middle column">
+            <form action="" method="post">
+                <div class="hstack">
+                    <input type="text" name="username" class="transparent-input" value="Фамилия Имя"
+                        style="font-size: 60px; max-width: 400px;">
+                    <p>*</p>
+                </div>
+                <div class="hstack">
+                    <input type="text" name="position" class="transparent-input" value="Должность"
+                        style="font-size: 30px">
+                    <p>*</p>
+                </div>
+                <div style="height: 40px;"></div>
+                <hr>
+                <div class="hstack">
+                    <p class="text-fixed">Корпоративная почта</p>
+                    <div class="rounded-with-border">
+                        <input type="email" name="email" id="email" class="vertical-padding-m transparent-input">
+                    </div>
+                    <p>*</p>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Номер телефона</p>
+                    <div class="rounded-with-border">
+                        <input type="tel" name="phone" id="phone" class="vertical-padding-m transparent-input">
+                    </div>
+                    <p>*</p>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Мессенджер</p>
+                    <div class="rounded-with-border">
+                        <input type="text" name="messenger" id="messenger" class="vertical-padding-m transparent-input">
+                    </div>
+                    <p>*</p>
+                </div>
+                <hr>
+                <div class="hstack">
+                    <p class="text-fixed">Дата рождения</p>
+                    <div class="rounded-with-border">
+                        <input type="date" name="birthdate" id="birthdate" class="vertical-padding-m transparent-input">
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Размер футболки</p>
+                    <div class="rounded-with-border">
+                        <input type="text" name="tshirt_size" id="tshirt_size"
+                            class="vertical-padding-m transparent-input">
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Образование</p>
+                    <div class="rounded-with-border">
+                        <input type="text" name="education" id="education" class="vertical-padding-m transparent-input">
+                    </div>
+                </div>
+                <div class="hstack">
+                    <p class="text-fixed">Учебное заведение</p>
+                    <div class="rounded-with-border">
+                        <input type="text" name="university" id="university"
+                            class="vertical-padding-m transparent-input">
+                    </div>
+                </div>
+                <hr>
+                <footer class="footer">
+                    <div class="hstack">
+                        <div class="spacer"></div>
+                        <p>
+                            <input type="image" src="{{url_for('static', filename='resources/checkmark.svg')}}">
+                        </p>
+                    </div>
+                </footer>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

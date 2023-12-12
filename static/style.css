@@ -4,6 +4,12 @@
     min-height: 100vh;
 }
 
+.center-horizontal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .hstack {
     display: flex;
     flex-direction: row;
@@ -122,6 +128,28 @@ hr {
     animation: fadeIn 1s;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.shown {
+    visibility: visible;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tr th {
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+table tr td {
+    border-left: 2px solid black;
+}
+
 @font-face {
     font-family: "Default Font";
     src: url(fonts/IBMPlexMono-Regular.ttf) format("truetype");
@@ -131,7 +159,11 @@ p,
 h1,
 h2,
 h3,
-input {
+input,
+th,
+td,
+ul,
+li {
     font-family: "Default Font", Verdana, Tahoma;
 }
 
@@ -160,4 +192,39 @@ input {
 .vertical-padding-xs {
     padding-top: 4px;
     padding-bottom: 4px;
+}
+
+
+ul,
+#myUL {
+    list-style-type: none;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.caret {
+    cursor: pointer;
+    user-select: none;
+}
+
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script src="{{url_for('static', filename='scripts/functions.js')}}"></script>
+</head>
+
+<body>
+    <div>
+        <h1 style="font-size: 55px; padding-left: 5%;">Цели</h1>
+        <div class="hstack" style="width: 90%;">
+            <div class="spacer"></div>
+            <input type="image" id="addGoal" width="24" height="24" onclick="showAddGoalForm()"
+                src="{{url_for('static', filename='resources/plus.svg')}}">
+        </div>
+        <table cellspacing="0" style="width: 80%; border: 4px solid black;">
+            <tr>
+                <th style="padding: 40px;">Название цели</th>
+                <th style="padding: 40px;">Ключевой результат</th>
+                <th style="padding: 40px;">Выполнить до</th>
+            </tr>
+            {% for goal in goals %}
+            <tr>
+                <td>
+                    <p class="rounded-with-border horizontal-padding-m">{{ goal.name }}</p>
+                </td>
+                <td>
+                    <p class="rounded-with-border horizontal-padding-m">{{ goal.description }}</p>
+                </td>
+                <td>
+                    <p class="rounded-with-border horizontal-padding-m">{{ goal.deadline }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+            <div>
+                <form id="addGoalForm" action="" method="post">
+                    <tr>
+                        <td>
+                            <div class="rounded-with-border hidden" id="addGoalName">
+                                <input type="text" name="name" id="name" class="horizontal-padding-m transparent-input">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rounded-with-border hidden" id="addGoalDescription">
+                                <input type="text" name="description" id="description"
+                                    class="horizontal-padding-m transparent-input">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rounded-with-border hidden" id="addGoalDeadline">
+                                <input type="date" name="deadline" id="deadline"
+                                    class="horizontal-padding-m transparent-input">
+                            </div>
+                        </td>
+                    </tr>
+                </form>
+            </div>
+        </table>
+    </div>
+</body>
+
+</html>

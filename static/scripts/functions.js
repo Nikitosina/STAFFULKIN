@@ -40,3 +40,14 @@ function showPopup() {
     var popup = document.getElementById("settingsPopup");
     popup.classList.toggle("show");
 }
+
+function showAddGoalForm() {
+    let isShown = document.getElementById("addGoalName").classList.contains("shown");
+    if (isShown) {
+        document.getElementById("addGoalForm").submit()
+    }
+    document.getElementById("addGoalName").classList.toggle("shown")
+    document.getElementById("addGoalDescription").classList.toggle("shown");
+    document.getElementById("addGoalDeadline").classList.toggle("shown");
+    document.getElementById("addGoal").src = isShown ? "http://localhost:8080/static/resources/plus.svg" : "http://localhost:8080/static/resources/checkmark.svg"
+}

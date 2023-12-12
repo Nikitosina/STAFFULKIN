@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script src="{{url_for('static', filename='scripts/functions.js')}}"></script>
+</head>
+
+<body>
+    <div style="padding: 0px 64px">
+        <h1 style="font-size: 60px;">Структура компании</h1>
+        <ul id="myUL">
+            <li><span class="caret" style="font-size: 30px;">{{ tree.employee_name }}</span>
+                <ul class="nested">
+                    {% for level1 in tree.subordinates %}
+                        {% if level1.subordinates %}
+                            <li>
+                                <span class="caret">{{ level1.employee_name }}</span>
+                                <ul class="nested">
+                            {% for level2 in level1.subordinates %}
+                                {% if level2.subordinates %}
+                                    <li>
+                                        <span class="caret">{{ level2.employee_name }}</span>
+                                        <ul class="nested">
+                                {% else %}
+                                    <li>{{ level2.employee_name }}</li>
+                                {% endif %}
+                            {% endfor %}
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li>{{ level1.employee_name }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="{{url_for('static', filename='scripts/tree_script.js')}}"></script>
+</body>
+
+</html>

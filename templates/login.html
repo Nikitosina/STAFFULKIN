@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <script src="{{url_for('static', filename='scripts/functions.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/pasteboard_controller.js')}}"></script>
+</head>
+
+<body>
+    <h1>Войти</h1>
+    <form action="" method="post">
+        <div class="hstack">
+            <p class="text-fixed">Имя пользователя</p>
+            <div class="rounded-with-border">
+                <input type="text" name="username" id="username" class="vertical-padding-m transparent-input">
+            </div>
+            <p>*</p>
+        </div>
+        <div class="hstack">
+            <p class="text-fixed">Пароль</p>
+            <div class="rounded-with-border">
+                <input type="password" name="password" id="password" class="vertical-padding-m transparent-input">
+            </div>
+            <p>*</p>
+        </div>
+        <p>
+            <input type="image" src="{{url_for('static', filename='resources/checkmark.svg')}}">
+        </p>
+    </form>
+</body>
+
+</html>
