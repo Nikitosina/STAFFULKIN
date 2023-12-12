@@ -17,8 +17,8 @@
                         <p class="text-s rounded-with-border-action vertical-padding-xs">Изменить данные
                             существующего сотрудника</p>
                         <p class="text-s rounded-with-border-action vertical-padding-xs">Изменить свои данные</p>
-                        <p class="text-s rounded-with-border-action vertical-padding-xs"><a
-                                href="http://localhost:8080/addUser">Добавить нового сотрудника</a>
+                        <p class="text-s rounded-with-border-action vertical-padding-xs">
+                            <a id="addNewEmployee" href="">Добавить нового сотрудника</a>
                         </p>
                         <p class="text-s rounded-with-border-action vertical-padding-xs">Добавить новый отдел</p>
                     </div>
@@ -138,7 +138,7 @@
             <a id="goalsUrl" href="">
                 <p>Цели</p>
             </a>
-            <a href="http://localhost:8080/companyTree">
+            <a id="companyTree" href="">
                 <p>Структура компании</p>
             </a>
         </div>
@@ -148,6 +148,9 @@
     </div>
     <script>
         document.getElementById("goalsUrl").href = window.location.href + "/goals"
+        let url = new URL(window.location.href)
+        document.getElementById("addNewEmployee").href = url.origin + "/addUser"
+        document.getElementById("companyTree").href = url.origin + "/companyTree"
     </script>
 </body>
 

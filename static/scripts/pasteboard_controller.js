@@ -1,5 +1,6 @@
-let defaultIcon = "http://localhost:8080/static/resources/copy.svg"
-let checkmarkIcon = "http://localhost:8080/static/resources/checkmark.svg"
+let urlOrigin = new URL(window.location.href).origin
+let defaultIcon = urlOrigin + "/static/resources/copy.svg"
+let checkmarkIcon = urlOrigin + "/static/resources/checkmark.svg"
 var current_copied = -1
 
 function resetPasteIcons() {

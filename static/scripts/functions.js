@@ -42,6 +42,7 @@ function showPopup() {
 }
 
 function showAddGoalForm() {
+    let urlOrigin = new URL(window.location.href).origin
     let isShown = document.getElementById("addGoalName").classList.contains("shown");
     if (isShown) {
         document.getElementById("addGoalForm").submit()
@@ -49,5 +50,5 @@ function showAddGoalForm() {
     document.getElementById("addGoalName").classList.toggle("shown")
     document.getElementById("addGoalDescription").classList.toggle("shown");
     document.getElementById("addGoalDeadline").classList.toggle("shown");
-    document.getElementById("addGoal").src = isShown ? "http://localhost:8080/static/resources/plus.svg" : "http://localhost:8080/static/resources/checkmark.svg"
+    document.getElementById("addGoal").src = isShown ? urlOrigin + "/static/resources/plus.svg" : urlOrigin + "/static/resources/checkmark.svg"
 }
