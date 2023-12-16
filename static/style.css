@@ -49,30 +49,25 @@
 
 .masthead {
     flex: 1 100%;
-    background-color: aqua;
 }
 
 .side-left {
     flex: 0 0 320px;
     display: flex;
     justify-content: center;
-    background-color: aquamarine;
 }
 
 .side-right {
     flex: 0 0 260px;
-    background-color: blanchedalmond;
 }
 
 .middle {
     flex: 1;
-    background-color: bisque;
     padding: 0px 20px;
 }
 
 .footer {
     flex: 1 100%;
-    background-color: blueviolet;
 }
 
 .transparent-input {
